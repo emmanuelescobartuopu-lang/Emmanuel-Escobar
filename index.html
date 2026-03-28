@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Andon Línea</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 120px);
+      gap: 20px;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .machine {
+      width: 120px;
+      height: 120px;
+      line-height: 120px;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .ok { background-color: green; }
+    .fail { background-color: red; }
+    .quality { background-color: blue; }
+    .setup { background-color: orange; }
+
+    /* Parpadeo */
+    .blink {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Andon Línea DT</h1>
+
+<div class="grid">
+  <div id="M1" class="machine ok">M1</div>
+  <div id="M2" class="machine fail blink">M2</div>
+  <div id="M3" class="machine quality">M3</div>
+  <div id="M4" class="machine setup">M4</div>
+</div>
+
+<script>
+  // Aquí puedes cambiar estados manualmente
+  const estados = {
+    M1: "ok",
+    M2: "fail",
+    M3: "quality",
+    M4: "setup"
+  };
+
+  for (let maquina in estados) {
+    const el = document.getElementById(maquina);
+    el.className = "machine " + estados[maquina];
+
+    if (estados[maquina] === "fail") {
+      el.classList.add("blink");
+    }
+  }
+</script>
+
+</body>
+</html>
