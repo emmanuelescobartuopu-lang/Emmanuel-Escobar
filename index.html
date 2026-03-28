@@ -65,7 +65,7 @@
     M1: "ok",
     M2: "fail",
     M3: "quality",
-    M4: "setup"
+    M4: "setup",
     M5: "ok",
     M6: "ok",
     M7: "ok",
@@ -74,18 +74,18 @@
 
   for (let maquina in estados) {
   const el = document.getElementById(maquina);
-  const estados = estados[maquina];
+  const estado = estados[maquina];
 
-  el.className = "machine " + estados;
+  el.className = "machine " + estado;
 
-  if (estados === "fail") {
+  if (estado === "fail") {
     el.classList.add("blink");
   } else {
     el.classList.remove("blink");
   }
 
   // 👇 AQUÍ agregas texto dinámico
-  el.innerText = maquina + "\n" + estados.toUpperCase();
+  el.innerText = maquina + "\n" + estado.toUpperCase();
 }
 </script>
 
