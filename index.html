@@ -74,18 +74,18 @@
 
   for (let maquina in estados) {
   const el = document.getElementById(maquina);
-  const estado = estados[maquina];
+  const estados = estados[maquina];
 
-  el.className = "machine " + estado;
+  el.className = "machine " + estados;
 
-  if (estado === "fail") {
+  if (estados === "fail") {
     el.classList.add("blink");
   } else {
     el.classList.remove("blink");
   }
 
   // 👇 AQUÍ agregas texto dinámico
-  el.innerText = maquina + "\n" + estado.toUpperCase();
+  el.innerText = maquina + "\n" + estados.toUpperCase();
 }
 </script>
 
