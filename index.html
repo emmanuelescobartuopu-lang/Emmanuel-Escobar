@@ -9,15 +9,16 @@
       text-align: center;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 120px);
-      gap: 20px;
-      justify-content: center;
-      margin-top: 50px;
+   .grid {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border: 2px solid #ccc;
+  margin-top: 50px;
     }
 
     .machine {
+      position: absolute;
       width: 120px;
       height: 120px;
       line-height: 120px;
@@ -47,10 +48,15 @@
 <h1>Andon Línea DT</h1>
 
 <div class="grid">
-  <div id="M1" class="machine ok">M1</div>
-  <div id="M2" class="machine fail blink">M2</div>
-  <div id="M3" class="machine quality">M3</div>
-  <div id="M4" class="machine setup">M4</div>
+
+  <div id="M1" class="machine ok" style="top:50px; left:100px;">M1</div>  
+
+  <div id="M2" class="machine fail blink" style="top:50px; left:300px;">M2</div>
+
+  <div id="M3" class="machine quality" style="top:200px; left:100px;">M3</div>
+
+  <div id="M4" class="machine setup" style="top:200px; left:300px;">M4</div>
+
 </div>
 
 <script>
